@@ -1,8 +1,8 @@
 import telebot
 import pyowm
 
-owm = pyowm.OWM('WEATHER_TOKEN', language = 'ru')
-bot = telebot.TeleBot("TELEGRAM-BOT_TOKEN")
+owm = pyowm.OWM('6d00d1d4e704068d70191bad2673e0cc', language = 'ru')
+bot = telebot.TeleBot("907040967:AAEpYDbd83uVQCQcmG-F1xGPMzI-TsMgW_I")
 
 @bot.message_handler(content_types=['text'])
 def send_weather(message):
@@ -24,4 +24,4 @@ def send_weather(message):
 
 	bot.send_message(message.chat.id, answer)
 
-bot.polling( none_stop = True )
+bot.polling(none_stop=True, interval=0)
